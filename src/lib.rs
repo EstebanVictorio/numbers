@@ -16,7 +16,7 @@ pub fn print() {
   output_sequence(&numbers);
 }
 
-fn output_sequence(numbers: &Vec<Number>) {
+fn output_sequence(numbers: &[Number]) {
   for n in numbers {
     println!("{}", n);
   }

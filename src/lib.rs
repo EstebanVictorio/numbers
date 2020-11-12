@@ -16,6 +16,8 @@ pub fn print() {
   output_sequence(&numbers);
 }
 
+
+// NOTE: Last checkpoint: change signature argument input from Vec to reference of a slice
 fn output_sequence(numbers: &[Number]) {
   for n in numbers {
     println!("{}", n);

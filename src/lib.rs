@@ -5,19 +5,22 @@ pub fn say_hello() {
 }
 
 pub fn print() {
-  let numbers= [
+  let numbers= vec![
     Number{ name: String::from("one"), value: 1 },
     Number{ name: String::from("two"), value: 2 },
     Number{ name: String::from("three"), value: 3 },
     Number{ name: String::from("four"), value: 4 },
     Number{ name: String::from("five"), value: 5 },
   ];
-
-  for n in numbers.iter() {
-     println!("{}",n);
-  }
+  output_sequence(&numbers);
+  output_sequence(&numbers);
 }
 
+fn output_sequence(numbers: &Vec<Number>) {
+  for n in numbers {
+    println!("{}", n);
+  }
+}
 
 struct Number {
   name: String,

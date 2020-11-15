@@ -4,15 +4,8 @@ pub fn say_hello() {
   println!("Hello world from Rust!");
 }
 
-pub fn print() {
-  let numbers= vec![
-    Number{ name: String::from("one"), value: 1 },
-    Number{ name: String::from("two"), value: 2 },
-    Number{ name: String::from("three"), value: 3 },
-    Number{ name: String::from("four"), value: 4 },
-    Number{ name: String::from("five"), value: 5 },
-  ];
-  output_sequence(&numbers);
+pub fn print(limit: u8) {
+  let numbers= generate_sequence(limit);
   output_sequence(&numbers);
 }
 
@@ -22,6 +15,15 @@ fn output_sequence(numbers: &[Number]) {
   for n in numbers {
     println!("{}", n);
   }
+}
+ 
+fn generate_sequence(limit: u8)-> Vec<Number> {
+  let mut numbers = Vec::new();
+  for n in 1..=limit {
+    numbers.push(Number { name: String::from("auto"), value: n })
+  }
+
+  numbers
 }
 
 struct Number {

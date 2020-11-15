@@ -18,12 +18,9 @@ fn output_sequence(numbers: &[Number]) {
 }
  
 fn generate_sequence(limit: u8)-> Vec<Number> {
-  let mut numbers = Vec::new();
-  for n in 1..=limit {
-    numbers.push(Number { name: String::from("auto"), value: n })
-  }
-
-  numbers
+  (1..=limit)
+    .map(|value| Number { name: String::from("auto"), value, })
+    .collect()
 }
 
 struct Number {
